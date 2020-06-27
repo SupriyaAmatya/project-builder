@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/project_builder/static/css/main.eb940651.chunk.css",
-    "main.js": "/project_builder/static/js/main.d4cb6a03.chunk.js",
-    "main.js.map": "/project_builder/static/js/main.d4cb6a03.chunk.js.map",
-    "runtime-main.js": "/project_builder/static/js/runtime-main.25766ee6.js",
-    "runtime-main.js.map": "/project_builder/static/js/runtime-main.25766ee6.js.map",
-    "static/js/2.32bfc7d6.chunk.js": "/project_builder/static/js/2.32bfc7d6.chunk.js",
-    "static/js/2.32bfc7d6.chunk.js.map": "/project_builder/static/js/2.32bfc7d6.chunk.js.map",
-    "index.html": "/project_builder/index.html",
-    "precache-manifest.105561cde1ea2fdeb37a022c0abd5c29.js": "/project_builder/precache-manifest.105561cde1ea2fdeb37a022c0abd5c29.js",
-    "service-worker.js": "/project_builder/service-worker.js",
-    "static/css/main.eb940651.chunk.css.map": "/project_builder/static/css/main.eb940651.chunk.css.map",
-    "static/js/2.32bfc7d6.chunk.js.LICENSE.txt": "/project_builder/static/js/2.32bfc7d6.chunk.js.LICENSE.txt"
+    "main.css": "/project-builder/static/css/main.eb940651.chunk.css",
+    "main.js": "/project-builder/static/js/main.7faf634f.chunk.js",
+    "main.js.map": "/project-builder/static/js/main.7faf634f.chunk.js.map",
+    "runtime-main.js": "/project-builder/static/js/runtime-main.8cd68f9f.js",
+    "runtime-main.js.map": "/project-builder/static/js/runtime-main.8cd68f9f.js.map",
+    "static/js/2.32bfc7d6.chunk.js": "/project-builder/static/js/2.32bfc7d6.chunk.js",
+    "static/js/2.32bfc7d6.chunk.js.map": "/project-builder/static/js/2.32bfc7d6.chunk.js.map",
+    "index.html": "/project-builder/index.html",
+    "precache-manifest.577b7fc9beadd84c913b4d39ae44f51e.js": "/project-builder/precache-manifest.577b7fc9beadd84c913b4d39ae44f51e.js",
+    "service-worker.js": "/project-builder/service-worker.js",
+    "static/css/main.eb940651.chunk.css.map": "/project-builder/static/css/main.eb940651.chunk.css.map",
+    "static/js/2.32bfc7d6.chunk.js.LICENSE.txt": "/project-builder/static/js/2.32bfc7d6.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.25766ee6.js",
+    "static/js/runtime-main.8cd68f9f.js",
     "static/js/2.32bfc7d6.chunk.js",
     "static/css/main.eb940651.chunk.css",
-    "static/js/main.d4cb6a03.chunk.js"
+    "static/js/main.7faf634f.chunk.js"
   ]
 }
