@@ -1,0 +1,128 @@
+.left-navbar__wrapper {
+    position: fixed;
+    width: 246px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 0px 0px #DAE2ED;
+    z-index: 10;
+}
+
+/* Nav Head */
+
+.nav-head {
+    margin-top: 24px;
+    border-bottom: 1px solid rgba(115, 143, 179, 0.2);
+    padding-left: 24px;
+}
+
+.project-info__container {
+    display: flex;
+    align-items: center;
+}
+
+.project-info__container .project-infos {
+    margin-left: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-title {
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.15px;
+    color: #424242;
+    margin-right: 20px;
+}
+
+.project-title span {
+    display: block;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+    color: #9E9E9E;
+    margin-top: 5px;
+}
+
+.project-infos svg {
+    width: 24px;
+    height: 24px;
+    color: #616161;
+}
+
+.nav-head form label {
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+    color: #9E9E9E;
+    margin-right: 8px;
+}
+
+.nav-head .phase-selector form label {
+    margin-right: 15px;
+}
+
+.nav-head form select {
+    width: 150px;
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+    color: #000000;
+    padding: 4px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: url(../../../assets/dropdown.png) no-repeat 95% 50%;
+}
+
+.module-selector {
+    margin: 18px 0;
+}
+
+.phase-selector {
+    margin-bottom: 16px;
+}
+
+/* Nav Elemnts */
+
+.nav-elements {
+    margin-top: 16px;
+}
+
+.nav-elements .top, .nav-elements .bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-elements .bottom {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    bottom: 64px;
+}
+
+.left-nav__items li a {
+    width: 100%;
+    padding: 16px 24px 18px;
+    display: block;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.5px;
+    color: #616161;
+}
+
+.left-nav__items li a svg {
+    width: 24px;
+    height: 24px;
+    color: #9E9E9E;
+    margin-right: 12px;
+    position: relative;
+    top: 6px;
+}
+
+.left-nav__items li a:hover, .left-nav__items li a.is-active {
+    border-left: 5px solid #304FFE;
+    background-color: #EAEBFF;
+}
