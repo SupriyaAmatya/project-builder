@@ -5,7 +5,7 @@ import Projects from './components/projects/Projects';
 
 
 import {HashRouter, Switch, Route} from 'react-router-dom';
-import Requirements from './components/projects/requirements/Requirements';
+// import Requirements from './components/projects/requirements/Requirements';
 
 class App extends Component {
   render() {
