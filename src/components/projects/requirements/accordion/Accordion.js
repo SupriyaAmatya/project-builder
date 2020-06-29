@@ -2,7 +2,7 @@ import React from 'react'
 import ProgressBar from '../../../ProgressBar';
 import Priority from '../../../Priority';
 import { MdKeyboardArrowDown, MdMoreVert, MdInfoOutline } from 'react-icons/md'
-import SecondLevel from './Chlidren';
+import Children from './Chlidren';
 
 const Accordion = (props) => {
   const { status, handleClick } = props
@@ -36,7 +36,7 @@ const Accordion = (props) => {
             <div className="more"><MdMoreVert /> </div>
           </div>
 
-          <SecondLevel children={item.children} handleClick={handleClick} parentActive={item.isActive} />
+          <Children children={item.children} handleClick={handleClick} parentActive={item.isActive} />
 
         </div>
       )
