@@ -14,7 +14,7 @@ class MainContainer extends Component {
             title: "Presentation should be generated from existing data",
             progress: 50,
             risk: "High",
-            priority: 2,
+            priority: 3,
             time: 7,
             component: "generate document",
             isActive: false,
@@ -22,24 +22,70 @@ class MainContainer extends Component {
               {
                 id: "CP-06.1",
                 title: "Generate Jira Issues",
-                progress: 50,
-                risk: "High",
+                progress: 100,
+                risk: "Low",
                 priority: 2,
-                time: 7,
+                time: 2,
                 component: '',
                 isActive: false,
-                children:[]
+                children: [
+                  {
+                    id: "CP-06.1.1",
+                    title: "Generate Jira Issues",
+                    progress: 100,
+                    risk: "Low",
+                    priority: 2,
+                    time: 2,
+                    component: '',
+                    isActive: false,
+                    children: []
+                  },
+                  {
+                    id: "CP-06.1.2",
+                    title: "Generate Jira Issues",
+                    progress: 100,
+                    risk: "Low",
+                    priority: 1,
+                    time: 4,
+                    component: '',
+                    isActive: false,
+                    children: []
+                  }
+                ]
               },
               {
                 id: "CP-06.2",
                 title: "Generate PPT",
                 progress: 50,
                 risk: "High",
-                priority: 2,
-                time: 7,
+                priority: 1,
+                time: 5,
                 component: '',
                 isActive: false,
-                children:[]
+                children: [
+                  {
+                    id: "CP-06.2.1",
+                    title: "Generate Jira Issues",
+                    progress: 100,
+                    risk: "Low",
+                    priority: 2,
+                    time: 2,
+                    component: '',
+                    isActive: false,
+                    children: []
+                  },
+                  {
+                    id: "CP-06.2.2",
+                    title: "Data Structure for template ",
+                    progress: 50,
+                    risk: "High",
+                    priority: 1,
+                    time: 3,
+                    component: '',
+                    isActive: false,
+                    children: []
+                  }
+                ]
               }
             ]
           },
@@ -52,7 +98,19 @@ class MainContainer extends Component {
             time: 7,
             component: "authentication",
             isActive: false,
-            children: []
+            children: [
+              {
+                id: "CP-07.1",
+                title: "Generate Jira Issues",
+                progress: 50,
+                risk: "Low",
+                priority: 3,
+                time: 7,
+                component: "",
+                isActive: false,
+                children: []
+              }
+            ]
           },
           {
             id: "CP-08",
@@ -63,14 +121,26 @@ class MainContainer extends Component {
             time: 7,
             component: "data structure",
             isActive: false,
-            children: []
+            children: [
+                {
+                  id: "CP-08.1",
+                  title: "Generate Jira Issues",
+                  progress: 50,
+                  risk: "Low",
+                  priority: 3,
+                  time: 7,
+                  component: "",
+                  isActive: false,
+                  children: []
+                }
+            ]
           }
         ]
       },
 
       todo: {
         status: 'todo',
-        items:[
+        items: [
           {
             id: "CP-09",
             title: "User should be able to see project status at a glance",
@@ -80,7 +150,30 @@ class MainContainer extends Component {
             time: 7,
             component: "authentication",
             isActive: false,
-            children: []
+            children: [
+              {
+                id: "CP-09.1",
+                title: "Generate Jira Issues",
+                progress: 0,
+                risk: "Low",
+                priority: 3,
+                time: 7,
+                component: "",
+                isActive: false,
+                children: []
+              },
+              {
+                id: "CP-09.2",
+                title: "Generate PTT",
+                progress: 0,
+                risk: "Low",
+                priority: 3,
+                time: 7,
+                component: "",
+                isActive: false,
+                children: []
+              }
+            ]
           },
           {
             id: "CP-10",
@@ -91,14 +184,67 @@ class MainContainer extends Component {
             time: 7,
             component: "data structure",
             isActive: false,
-            children: []
+            children: [
+              {
+                id: "CP-10.1",
+                title: "Generate Jira Issues",
+                progress: 0,
+                risk: "Low",
+                priority: 3,
+                time: 7,
+                component: "",
+                isActive: false,
+                children: []
+              },
+              {
+                id: "CP-10.2",
+                title: "Generate PTT",
+                progress: 0,
+                risk: "Low",
+                priority: 3,
+                time: 7,
+                component: "",
+                isActive: false,
+                children: []
+              }
+            ]
           }
         ]
       },
 
-      done: { status: 'done',items:[] }  
+      done: { status: 'done', items: [] }
     }
   }
+
+  handleClick = id => {
+    let result = this.toggleChildren(0, id, this.state.inProgress.items);
+    let result2 = this.toggleChildren(0, id, this.state.todo.items);
+    this.setState({
+      inProgress: {
+        status: 'in progress',
+        items: result
+      },
+      todo: {
+        status: 'todo',
+        items: result2
+      }
+    });
+    console.log(this.state.list);
+  };
+
+  toggleChildren = (i, data_id, arr) => {
+    if (i <= arr.length - 1) {
+      if (arr[i].id === data_id) {
+        arr[i].isActive = !arr[i].isActive;
+      } 
+      let newArr = this.toggleChildren(0, data_id, arr[i].children);
+      arr[i].children = newArr;
+      arr = this.toggleChildren(++i, data_id, arr);
+    }
+    return arr;
+  };
+
+
   render() {
     return (
       <div className="requirement-main__container">
@@ -112,9 +258,9 @@ class MainContainer extends Component {
           <div />
         </div>
 
-        <RequirementStatus status={this.state.inProgress} />
-        <RequirementStatus status={this.state.todo} />
-        <RequirementStatus status={this.state.done} />
+        <RequirementStatus status={this.state.inProgress} handleClick={this.handleClick} />
+        <RequirementStatus status={this.state.todo} handleClick={this.handleClick} />
+        <RequirementStatus status={this.state.done} handleClick={this.handleClick} />
       </div>
     )
   }

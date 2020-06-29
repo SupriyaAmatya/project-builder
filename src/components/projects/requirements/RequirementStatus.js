@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { MdKeyboardArrowDown, MdAdd } from "react-icons/md";
-import Accordion from './Accordion';
+import Accordion from './accordion/Accordion';
 
 class RequirementStatus extends Component {
   state = {
@@ -12,8 +12,9 @@ class RequirementStatus extends Component {
       showContent: !this.state.showContent
     })
   }
+
   render() {
-    const { status }= this.props;
+    const { status , handleClick }= this.props;
     
     return (
       <div className="requirement-status">
@@ -25,7 +26,7 @@ class RequirementStatus extends Component {
         </div>
 
         <div className={`status__content ${this.state.showContent ? 'showContent' : ''}`}>
-          <Accordion status={status}/>
+          <Accordion status={status} handleClick={handleClick}/>
 
           <div className="add__btn">
             <MdAdd /> <p>add requirement</p>

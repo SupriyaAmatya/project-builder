@@ -235,7 +235,7 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: 8fr 1fr 1fr 1fr 2fr 2.5fr 0.3fr;
+    grid-template-columns: 8fr 1.2fr 1fr 1fr 2fr 2.5fr 0.3fr;
     grid-gap: 10px;
 }
 
@@ -262,7 +262,7 @@ body {
 .requirement-status {
     margin-top: 14px;
     margin-bottom: 40px;
-    padding: 8px 12px;
+    padding: 8px 12px 0px;
     border: 1px solid rgba(115, 143, 179, 0.2);
     box-sizing: border-box;
     border-radius: 5px;
@@ -272,7 +272,6 @@ body {
     display: flex;
     flex-direction: row;
     cursor: pointer;
-    margin-bottom: 8px;
 }
 
 .requirement-status .stauts__bar p {
@@ -304,6 +303,7 @@ body {
 }
 
 .status__content {
+    margin-top: 8px;
     max-height: 0;
     overflow: hidden;
 }
@@ -330,6 +330,7 @@ body {
     cursor: pointer;
     margin-top: 12px;
     margin-left: 5px;
+    margin-bottom: 8px;
 }
 
 .add__btn svg {
@@ -357,9 +358,9 @@ body {
 
 .grid-container.requirement__item {
     background: #ffffff;
-    margin-top: 8px;
-    padding: 10px 8px 5px;
-    margin-bottom: 8px;
+    margin-top: 4px;
+    padding: 10px 8px 5px 15px;
+    margin-bottom: 4px;
     cursor: pointer;
     transition: all .3s ease;
 }
@@ -375,6 +376,8 @@ body {
     letter-spacing: 0.25px;
     color: #000000;
     cursor: pointer;
+    position: relative;
+    padding-left: 15px;
 }
 
 .title span {
@@ -383,8 +386,9 @@ body {
 
 .title svg {
     margin-right: 5px;
-    position: relative;
+    position: absolute;
     top: 2px;
+    left: -6px;
     color: #9E9E9E;
     /* margin-top: 5px; */
 }
@@ -402,9 +406,11 @@ body {
 .redColor {
     color: #C22727;
 }
+
 .yellowColor {
     color: #EAA800;
 }
+
 .greenColor {
     color: #4CAF50;
 }
@@ -416,20 +422,24 @@ body {
     color: #424242;
 }
 
+.time .bgGray {
+    background-color: #F5F5F5;
+}
+
 .time p {
     display: inline-block;
-    background-color: #F5F5F5;
     border-radius: 25px;
-    padding: 3px 5px;
+    padding: 3px 5px 3px 27px;
+    position: relative;
 }
 
 .time p svg {
     width: 16px;
     height: 16px;
     color: #9E9E9E;
-    position: relative;
-    top: 3px;
-    margin-right: 6px;
+    position: absolute;
+    left: 8.33%;
+    top: 12%;
 }
 
 .component p {
@@ -446,4 +456,78 @@ body {
 
 .more {
     color: #BDBDBD;
+}
+
+/* children accordion */
+
+.children__container {
+    position: relative;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.children__container.showContent {
+    max-height: 1000px;
+    opacity: 1;
+    /* overflow: auto; */
+}
+
+.grid-container.children {
+    background-color: #FFFFFF;
+    margin-top: -8px;
+    padding: 12px 8px 10px 15px;
+    position: relative;
+}
+
+.grid-container.children .title {
+    margin-left: 30px;
+}
+
+.grid-container.children .title::before {
+    content: '';
+    width: 20px;
+    height: 48px;
+    border-left: 2px solid #E0E0E0;
+    border-bottom: 2px solid #E0E0E0;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    top: -40px;
+    left: -30px;
+    z-index: 10;
+}
+
+.grid-container .title .completed {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #4CAF50;
+    border-radius: 4px;
+    margin-left: 12px;
+    padding: 3px 6px;
+}
+
+.grid-container .title .not-completed {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: #EAA800;
+    border-radius: 4px;
+    margin-left: 12px;
+    padding: 3px 6px;
+}
+
+.next-children .grid-container.children .title {
+    margin-left: 60px;
+    padding-left: 0;
+}
+
+.grid-container.children .title.ml-30 {
+    margin-left: 30px;
 }
